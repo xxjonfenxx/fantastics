@@ -9,11 +9,39 @@ namespace Fantastics.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        public ActionResult product(int id)
+        [HttpGet]
+        public ActionResult product(int? id)
         {
-            
+            using (FantasticsEntities entities = new FantasticsEntities())
+            {
+
+                var getProduct = from product in entities.products
+                                 join meta in entities.product_meta
+                                 on product.ID equals meta.product_id
+                                 where product.ID.Equals(id)
+                                 select product;
+                ViewBag.productInfo = getProduct;
+                if( !getProduct.Any() )
+                { 
+                    return View();
+                }
+                else
+                {
+                    return View("index");
+                }
+            }
         }
 
-		
+        public ActionResult viewAllProducts(int? page)
+        {
+            using (FantasticsEntities entities = new FantasticsEntities())
+            {
+                var products = from product in entities.products
+                               join meta in entities.product_meta
+                               on product.ID equals meta.product_id
+                               select product;
+                PagedProducts pager = new PagedProducts();
+            }
+        }
     }
 }
