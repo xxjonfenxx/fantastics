@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FantasticsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Fantastics.dbo.location_logs' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="location_logs">
+          <Property Name="ID" Type="bigint" />
+          <Property Name="product_id" Type="bigint" />
+          <Property Name="location_id" Type="bigint" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Fantastics.dbo.locations' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="locations">
+          <Property Name="location_id" Type="bigint" />
+          <Property Name="city" Type="varchar" MaxLength="255" />
+          <Property Name="state" Type="varchar" MaxLength="255" />
+          <Property Name="location_name" Type="varchar" MaxLength="255" />
+        </EntityType>-->
+        <EntityType Name="options">
+          <Key>
+            <PropertyRef Name="option_id" />
+          </Key>
+          <Property Name="option_id" Type="bigint" Nullable="false" />
+          <Property Name="option_name" Type="varchar" MaxLength="64" />
+          <Property Name="option_value" Type="text" />
+          <Property Name="autoload" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product_meta">
+          <Key>
+            <PropertyRef Name="meta_id" />
+          </Key>
+          <Property Name="meta_id" Type="bigint" Nullable="false" />
+          <Property Name="product_id" Type="bigint" />
+          <Property Name="meta_key" Type="varchar" MaxLength="255" />
+          <Property Name="meta_value" Type="text" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_author" Type="varchar" MaxLength="50" />
+          <Property Name="product_date" Type="datetime" />
+          <Property Name="product_date_gmt" Type="datetime" />
+          <Property Name="product_description" Type="text" />
+          <Property Name="product_title" Type="text" />
+          <Property Name="product_excerpt" Type="text" />
+          <Property Name="product_status" Type="varchar" MaxLength="50" />
+          <Property Name="comment_status" Type="varchar" MaxLength="50" />
+          <Property Name="ping_status" Type="varchar" MaxLength="50" />
+          <Property Name="post_password" Type="varchar" MaxLength="50" />
+          <Property Name="product_name" Type="varchar" MaxLength="200" />
+          <Property Name="to_ping" Type="text" />
+          <Property Name="pinged" Type="text" />
+          <Property Name="product_modified" Type="datetime" />
+          <Property Name="product_modified_gmt" Type="datetime" />
+          <Property Name="product_content_filtered" Type="text" />
+          <Property Name="product_parent" Type="bigint" />
+          <Property Name="guid" Type="varchar" MaxLength="255" />
+          <Property Name="menu_order" Type="int" />
+          <Property Name="product_type" Type="varchar" MaxLength="50" />
+          <Property Name="product_mime_type" Type="varchar" MaxLength="100" />
+          <Property Name="comment_count" Type="bigint" />
+        </EntityType>
+        <EntityType Name="term_relationships">
+          <Key>
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="object_id" Type="bigint" Nullable="false" />
+          <Property Name="term_taxonomy_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="term_order" Type="int" />
+        </EntityType>
+        <EntityType Name="term_taxonomy">
+          <Key>
+            <PropertyRef Name="term_id" />
+          </Key>
+          <Property Name="term_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="taxonomy" Type="varchar" MaxLength="255" />
+          <Property Name="description" Type="text" />
+          <Property Name="parent" Type="bigint" />
+          <Property Name="count" Type="bigint" />
+        </EntityType>
+        <EntityType Name="termmeta">
+          <Key>
+            <PropertyRef Name="meta_id" />
+          </Key>
+          <Property Name="meta_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="term_id" Type="bigint" />
+          <Property Name="meta_key" Type="varchar" MaxLength="255" />
+          <Property Name="meta_value" Type="text" />
+        </EntityType>
+        <EntityType Name="terms">
+          <Key>
+            <PropertyRef Name="term_id" />
+          </Key>
+          <Property Name="term_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" />
+          <Property Name="slug" Type="varchar" MaxLength="200" />
+          <Property Name="term_group" Type="bigint" />
+        </EntityType>
+        <EntityType Name="usermeta">
+          <Key>
+            <PropertyRef Name="umeta_id" />
+          </Key>
+          <Property Name="umeta_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="bigint" />
+          <Property Name="meta_key" Type="varchar" MaxLength="255" />
+          <Property Name="meta_value" Type="text" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_login" Type="varchar" MaxLength="60" />
+          <Property Name="user_pass" Type="varchar" MaxLength="255" />
+          <Property Name="user_nicename" Type="varchar" MaxLength="50" />
+          <Property Name="user_email" Type="varchar" MaxLength="100" />
+          <Property Name="user_url" Type="varchar" MaxLength="100" />
+          <Property Name="user_registered" Type="datetime" />
+          <Property Name="user_activation_key" Type="varchar" MaxLength="255" />
+          <Property Name="user_status" Type="int" />
+          <Property Name="display_name" Type="varchar" MaxLength="250" />
+          <Property Name="user_lastname" Type="varchar" MaxLength="255" />
+          <Property Name="user_firstname" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="FantasticsModelStoreContainer">
+          <EntitySet Name="options" EntityType="Self.options" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product_meta" EntityType="Self.product_meta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="term_relationships" EntityType="Self.term_relationships" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="term_taxonomy" EntityType="Self.term_taxonomy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="termmeta" EntityType="Self.termmeta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="terms" EntityType="Self.terms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usermeta" EntityType="Self.usermeta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FantasticsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="option">
+          <Key>
+            <PropertyRef Name="option_id" />
+          </Key>
+          <Property Name="option_id" Type="Int64" Nullable="false" />
+          <Property Name="option_name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="option_value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="autoload" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product_meta">
+          <Key>
+            <PropertyRef Name="meta_id" />
+          </Key>
+          <Property Name="meta_id" Type="Int64" Nullable="false" />
+          <Property Name="product_id" Type="Int64" />
+          <Property Name="meta_key" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="meta_value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_author" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="product_date" Type="DateTime" Precision="3" />
+          <Property Name="product_date_gmt" Type="DateTime" Precision="3" />
+          <Property Name="product_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="product_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="product_excerpt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="product_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="comment_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ping_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="post_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="product_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="to_ping" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pinged" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="product_modified" Type="DateTime" Precision="3" />
+          <Property Name="product_modified_gmt" Type="DateTime" Precision="3" />
+          <Property Name="product_content_filtered" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="product_parent" Type="Int64" />
+          <Property Name="guid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="menu_order" Type="Int32" />
+          <Property Name="product_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="product_mime_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="comment_count" Type="Int64" />
+        </EntityType>
+        <EntityType Name="term_relationships">
+          <Key>
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="object_id" Type="Int64" Nullable="false" />
+          <Property Name="term_taxonomy_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="term_order" Type="Int32" />
+        </EntityType>
+        <EntityType Name="term_taxonomy">
+          <Key>
+            <PropertyRef Name="term_id" />
+          </Key>
+          <Property Name="term_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="taxonomy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="parent" Type="Int64" />
+          <Property Name="count" Type="Int64" />
+        </EntityType>
+        <EntityType Name="termmeta">
+          <Key>
+            <PropertyRef Name="meta_id" />
+          </Key>
+          <Property Name="meta_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="term_id" Type="Int64" />
+          <Property Name="meta_key" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="meta_value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="term">
+          <Key>
+            <PropertyRef Name="term_id" />
+          </Key>
+          <Property Name="term_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="slug" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="term_group" Type="Int64" />
+        </EntityType>
+        <EntityType Name="usermeta">
+          <Key>
+            <PropertyRef Name="umeta_id" />
+          </Key>
+          <Property Name="umeta_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int64" />
+          <Property Name="meta_key" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="meta_value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_login" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="user_pass" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="user_nicename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="user_url" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="user_registered" Type="DateTime" Precision="3" />
+          <Property Name="user_activation_key" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="user_status" Type="Int32" />
+          <Property Name="display_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="user_lastname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="user_firstname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="FantasticsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="options" EntityType="Self.option" />
+          <EntitySet Name="product_meta" EntityType="Self.product_meta" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="term_relationships" EntityType="Self.term_relationships" />
+          <EntitySet Name="term_taxonomy" EntityType="Self.term_taxonomy" />
+          <EntitySet Name="termmetas" EntityType="Self.termmeta" />
+          <EntitySet Name="terms" EntityType="Self.term" />
+          <EntitySet Name="usermetas" EntityType="Self.usermeta" />
+          <EntitySet Name="users" EntityType="Self.user" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FantasticsModelStoreContainer" CdmEntityContainer="FantasticsEntities">
+          <EntitySetMapping Name="options">
+            <EntityTypeMapping TypeName="FantasticsModel.option">
+              <MappingFragment StoreEntitySet="options">
+                <ScalarProperty Name="option_id" ColumnName="option_id" />
+                <ScalarProperty Name="option_name" ColumnName="option_name" />
+                <ScalarProperty Name="option_value" ColumnName="option_value" />
+                <ScalarProperty Name="autoload" ColumnName="autoload" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_meta">
+            <EntityTypeMapping TypeName="FantasticsModel.product_meta">
+              <MappingFragment StoreEntitySet="product_meta">
+                <ScalarProperty Name="meta_id" ColumnName="meta_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="meta_key" ColumnName="meta_key" />
+                <ScalarProperty Name="meta_value" ColumnName="meta_value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="FantasticsModel.product">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="product_author" ColumnName="product_author" />
+                <ScalarProperty Name="product_date" ColumnName="product_date" />
+                <ScalarProperty Name="product_date_gmt" ColumnName="product_date_gmt" />
+                <ScalarProperty Name="product_description" ColumnName="product_description" />
+                <ScalarProperty Name="product_title" ColumnName="product_title" />
+                <ScalarProperty Name="product_excerpt" ColumnName="product_excerpt" />
+                <ScalarProperty Name="product_status" ColumnName="product_status" />
+                <ScalarProperty Name="comment_status" ColumnName="comment_status" />
+                <ScalarProperty Name="ping_status" ColumnName="ping_status" />
+                <ScalarProperty Name="post_password" ColumnName="post_password" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="to_ping" ColumnName="to_ping" />
+                <ScalarProperty Name="pinged" ColumnName="pinged" />
+                <ScalarProperty Name="product_modified" ColumnName="product_modified" />
+                <ScalarProperty Name="product_modified_gmt" ColumnName="product_modified_gmt" />
+                <ScalarProperty Name="product_content_filtered" ColumnName="product_content_filtered" />
+                <ScalarProperty Name="product_parent" ColumnName="product_parent" />
+                <ScalarProperty Name="guid" ColumnName="guid" />
+                <ScalarProperty Name="menu_order" ColumnName="menu_order" />
+                <ScalarProperty Name="product_type" ColumnName="product_type" />
+                <ScalarProperty Name="product_mime_type" ColumnName="product_mime_type" />
+                <ScalarProperty Name="comment_count" ColumnName="comment_count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="term_relationships">
+            <EntityTypeMapping TypeName="FantasticsModel.term_relationships">
+              <MappingFragment StoreEntitySet="term_relationships">
+                <ScalarProperty Name="object_id" ColumnName="object_id" />
+                <ScalarProperty Name="term_taxonomy_id" ColumnName="term_taxonomy_id" />
+                <ScalarProperty Name="term_order" ColumnName="term_order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="term_taxonomy">
+            <EntityTypeMapping TypeName="FantasticsModel.term_taxonomy">
+              <MappingFragment StoreEntitySet="term_taxonomy">
+                <ScalarProperty Name="term_id" ColumnName="term_id" />
+                <ScalarProperty Name="taxonomy" ColumnName="taxonomy" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="parent" ColumnName="parent" />
+                <ScalarProperty Name="count" ColumnName="count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="termmetas">
+            <EntityTypeMapping TypeName="FantasticsModel.termmeta">
+              <MappingFragment StoreEntitySet="termmeta">
+                <ScalarProperty Name="meta_id" ColumnName="meta_id" />
+                <ScalarProperty Name="term_id" ColumnName="term_id" />
+                <ScalarProperty Name="meta_key" ColumnName="meta_key" />
+                <ScalarProperty Name="meta_value" ColumnName="meta_value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="terms">
+            <EntityTypeMapping TypeName="FantasticsModel.term">
+              <MappingFragment StoreEntitySet="terms">
+                <ScalarProperty Name="term_id" ColumnName="term_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="slug" ColumnName="slug" />
+                <ScalarProperty Name="term_group" ColumnName="term_group" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usermetas">
+            <EntityTypeMapping TypeName="FantasticsModel.usermeta">
+              <MappingFragment StoreEntitySet="usermeta">
+                <ScalarProperty Name="umeta_id" ColumnName="umeta_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="meta_key" ColumnName="meta_key" />
+                <ScalarProperty Name="meta_value" ColumnName="meta_value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="FantasticsModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="user_login" ColumnName="user_login" />
+                <ScalarProperty Name="user_pass" ColumnName="user_pass" />
+                <ScalarProperty Name="user_nicename" ColumnName="user_nicename" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="user_url" ColumnName="user_url" />
+                <ScalarProperty Name="user_registered" ColumnName="user_registered" />
+                <ScalarProperty Name="user_activation_key" ColumnName="user_activation_key" />
+                <ScalarProperty Name="user_status" ColumnName="user_status" />
+                <ScalarProperty Name="display_name" ColumnName="display_name" />
+                <ScalarProperty Name="user_lastname" ColumnName="user_lastname" />
+                <ScalarProperty Name="user_firstname" ColumnName="user_firstname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
