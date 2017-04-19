@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Fantastics.Areas.Admin.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         // GET: Admin/Products
