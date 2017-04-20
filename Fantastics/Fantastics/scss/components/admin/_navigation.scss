@@ -1,0 +1,16 @@
+.adimin-menu {
+    position: fixed;
+    width: 200px;
+    float: left;
+    z-index: 1000;
+    background-color: $primary-background-color;
+}
+
+.admin-menu-back {
+    position: fixed;
+    width: 200px;
+    float: left;
+    z-index: 999;
+    bottom: -140px;
+    background-color: $primary-background-color;
+}

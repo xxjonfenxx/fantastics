@@ -208,6 +208,8 @@
     <Compile Include="ViewModels\pageProducts.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="build\babeljs\foundation_babel.js" />
+    <Content Include="build\babeljs\foundation_concat.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="entities.Context.tt">
@@ -264,7 +266,11 @@
     <Content Include="obj\Debug\edmxResourcesToEmbed\entities.ssdl" />
     <Content Include="obj\Debug\Fantastics.csprojResolveAssemblyReference.cache" />
     <Content Include="obj\Release\CoreCompileInputs.cache" />
+    <Content Include="build\babeljs\foundation_babel.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\custom.min.js" />
+    <Content Include="Scripts\datatables.min.js" />
+    <Content Include="Scripts\foundation.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
