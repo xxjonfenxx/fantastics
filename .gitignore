@@ -250,3 +250,7 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+fantastics/fantastics/node_modules
+.sass-cache
+fantastics/fantastics/bower_components

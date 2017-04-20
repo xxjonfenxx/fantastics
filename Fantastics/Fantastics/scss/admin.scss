@@ -1,0 +1,79 @@
+// Dependencies
+@import '../bower_components/foundation-sites/_vendor/normalize-scss/sass/normalize';
+@import '../bower_components/foundation-sites/_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
+@import '../bower_components/foundation-sites/_vendor/sassy-lists/stylesheets/helpers/true';
+@import '../bower_components/foundation-sites/_vendor/sassy-lists/stylesheets/functions/purge';
+@import '../bower_components/foundation-sites/_vendor/sassy-lists/stylesheets/functions/remove';
+@import '../bower_components/foundation-sites/_vendor/sassy-lists/stylesheets/functions/replace';
+@import '../bower_components/foundation-sites/_vendor/sassy-lists/stylesheets/functions/to-list';
+
+// Settings
+// import your own `settings` here or
+// import and modify the default settings through
+// @import 'settings/settings';
+@import 'base/settings';
+@import '../bower_components/foundation-sites/scss/foundation';
+
+// Sass utilities
+@import '../bower_components/foundation-sites/scss/util/util';
+
+// Global variables and styles
+@import '../bower_components/foundation-sites/scss/global';
+
+@include foundation-global-styles;
+@include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-flex-video;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-progress-element;
+@include foundation-meter-element;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-flex-classes;
+
+/*----------------------------------------------
+	Fantastics
+----------------------------------------------*/
+
+@import 'components/admin/buttons';
+@import 'components/admin/carousel';
+@import 'components/admin/dropdown';
+@import 'components/admin/navigation';
+@import 'layout/admin/body';
+@import 'layout/admin/footer';
+@import 'layout/admin/forms';
+@import 'layout/admin/header';
+@import 'layout/admin/sidebar';
+@import 'helpers/functions';
+@import 'helpers/helpers';
+@import 'helpers/mixins';

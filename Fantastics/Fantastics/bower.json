@@ -1,0 +1,24 @@
+{
+  "name": "fantastics",
+  "description": "E-commerce with WMS functionality",
+  "main": "index.js",
+  "authors": [
+    "Jonathan Brown"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/xxjonfenxx/fantastics",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.3.1",
+    "datatables": "^1.10.15",
+    "datatables.net": "^1.10.15",
+    "datatables.net-dt": "^3.2.2"
+  }
+}
