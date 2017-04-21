@@ -16,7 +16,40 @@
         <div class="admin-menu-main">
             <div class="admin-menu-back"></div>
             <div class="admin-menu">
+				<ul class="dropdown menu">
+					<li>
+						<a href="#">Dashboard</a>
+					</li>
+					<li>
+						<a href="#">Locations</a>
+						<ul>
+							<li><a href="">Add Location</a></li>
+							<li><a href="">Edit Location</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Products</a>
+						<ul>
+							<li><a href="">Add Product</a></li>
+							<li><a href="">Edit Product</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Product Categories</a>
+						<ul>
+							<li><a href="">Add Category</a></li>
+							<li><a href="">Edit Category</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Users</a>
+						<ul>
+							<li><a href="">Add User</a></li>
+							<li><a href="">Edit User</a></li>
+						</ul>
+					</li>
 
+				</ul>
             </div>
         </div>
     </div>
@@ -26,10 +59,10 @@
             @RenderBody()
         </div>
     </div>
-    @Scripts.Render("~/foundation.min.js");
-    @Scripts.Render("~/datatables.min.js");
 	@Scripts.Render("~/bundles/jquery");
-	@Scripts.Render("~/bundles/bootstrap");
+	@Scripts.Render("~/foundation.min.js");
+	@Scripts.Render("~/datatables.min.js");
+	@Scripts.Render("~/app.min.js");
 	@RenderSection("scripts", required: false)
 </body>
 </html>

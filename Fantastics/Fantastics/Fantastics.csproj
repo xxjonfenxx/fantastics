@@ -151,7 +151,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -208,6 +208,9 @@
     <Compile Include="ViewModels\pageProducts.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Fantastics.dll" />
+    <Content Include="bin\Fantastics.pdb" />
+    <Content Include="build\app.js" />
     <Content Include="build\babeljs\foundation_babel.js" />
     <Content Include="build\babeljs\foundation_concat.js" />
     <Content Include="Content\bootstrap.css" />
@@ -267,6 +270,7 @@
     <Content Include="obj\Debug\Fantastics.csprojResolveAssemblyReference.cache" />
     <Content Include="obj\Release\CoreCompileInputs.cache" />
     <Content Include="build\babeljs\foundation_babel.js.map" />
+    <Content Include="Areas\Admin\Views\Admin\View.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.min.js" />
     <Content Include="Scripts\datatables.min.js" />
@@ -289,6 +293,37 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Product\product.cshtml" />
+    <Content Include="scss\admin.scss" />
+    <Content Include="scss\base\_reset.scss" />
+    <Content Include="scss\base\_settings.scss" />
+    <Content Include="scss\components\admin\_buttons.scss" />
+    <Content Include="scss\components\admin\_carousel.scss" />
+    <Content Include="scss\components\admin\_dropdown.scss" />
+    <Content Include="scss\components\admin\_navigation.scss" />
+    <Content Include="scss\components\public\_buttons.scss" />
+    <Content Include="scss\components\public\_carousel.scss" />
+    <Content Include="scss\components\public\_dropdown.scss" />
+    <Content Include="scss\components\public\_navigation.scss" />
+    <Content Include="scss\helpers\_functions.scss" />
+    <Content Include="scss\helpers\_helpers.scss" />
+    <Content Include="scss\helpers\_mixins.scss" />
+    <Content Include="scss\layout\admin\_body.scss" />
+    <Content Include="scss\layout\admin\_footer.scss" />
+    <Content Include="scss\layout\admin\_forms.scss" />
+    <Content Include="scss\layout\admin\_header.scss" />
+    <Content Include="scss\layout\public\_body.scss" />
+    <Content Include="scss\layout\public\_footer.scss" />
+    <Content Include="scss\layout\public\_forms.scss" />
+    <Content Include="scss\layout\public\_header.scss" />
+    <Content Include="scss\layout\public\_sidebar.scss" />
+    <Content Include="scss\style.scss" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -299,6 +334,7 @@
     <Folder Include="Sass\layout\" />
     <Folder Include="Sass\pages\" />
     <Folder Include="Sass\vendors\" />
+    <Folder Include="scss\vendors\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -66,6 +66,12 @@ module.exports = function(grunt) {
 				files: {
 					'Scripts/datatables.min.js' : ['bower_components/datatables.net/js/jquery.dataTables.js']
 				}
+			},
+			
+			app_min: {
+				files: {
+					'Scripts/app.min.js' : ['build/app.js']
+				}
 			}
 		},
 		

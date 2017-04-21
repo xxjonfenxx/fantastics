@@ -31,17 +31,5 @@ namespace Fantastics.Controllers
                 }
             }
         }
-
-        public ActionResult viewAllProducts(int? page)
-        {
-            using (FantasticsEntities entities = new FantasticsEntities())
-            {
-                var products = from product in entities.products
-                               join meta in entities.product_meta
-                               on product.ID equals meta.product_id
-                               select product;
-                PagedProducts pager = new PagedProducts();
-            }
-        }
     }
 }

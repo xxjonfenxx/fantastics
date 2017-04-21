@@ -3911,5 +3911,32 @@ a.thumbnail {
 
   .large-order-6 {
     order: 6; } }
+/*----------------------------------------------
+	Fantastics
+----------------------------------------------*/
+.adimin-menu {
+  position: fixed;
+  width: 200px;
+  float: left;
+  z-index: 1000;
+  background-color: #2A3F54; }
+
+.admin-menu-back {
+  position: fixed;
+  width: 200px;
+  float: left;
+  z-index: 999;
+  bottom: -140px;
+  background-color: #2A3F54; }
+
+.admin-content-wrap {
+  margin-left: 200px;
+  height: 100%;
+  padding-left: 20px;
+  position: relative; }
+  .admin-content-wrap .admin-body {
+    position: relative; }
+    .admin-content-wrap .admin-body .wrap {
+      margin: 10px 20px 0 2px; }
 
 /*# sourceMappingURL=admin.css.map */
