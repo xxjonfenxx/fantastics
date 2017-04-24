@@ -490,7 +490,7 @@ pre {
   display: none !important; }
 
 .row {
-  max-width: 100%;
+  max-width: 75rem;
   margin-right: auto;
   margin-left: auto;
   display: flex;
@@ -1241,7 +1241,7 @@ a {
 
 hr {
   clear: both;
-  max-width: 100%;
+  max-width: 75rem;
   height: 0;
   margin: 1.25rem auto;
   border-top: 0;
@@ -3267,7 +3267,7 @@ html.is-reveal-open body {
   @media print, screen and (min-width: 40em) {
     .reveal {
       width: 600px;
-      max-width: 100%; } }
+      max-width: 75rem; } }
   @media print, screen and (min-width: 40em) {
     .reveal .reveal {
       right: auto;
@@ -3278,15 +3278,15 @@ html.is-reveal-open body {
   @media print, screen and (min-width: 40em) {
     .reveal.tiny {
       width: 30%;
-      max-width: 100%; } }
+      max-width: 75rem; } }
   @media print, screen and (min-width: 40em) {
     .reveal.small {
       width: 50%;
-      max-width: 100%; } }
+      max-width: 75rem; } }
   @media print, screen and (min-width: 40em) {
     .reveal.large {
       width: 90%;
-      max-width: 100%; } }
+      max-width: 75rem; } }
   .reveal.full {
     top: 0;
     left: 0;
@@ -6382,5 +6382,3 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 2rem;
   padding-left: 0.5rem;
   margin-top: 2rem; }
-
-/*# sourceMappingURL=admin.css.map */

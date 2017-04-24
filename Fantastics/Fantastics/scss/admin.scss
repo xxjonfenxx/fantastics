@@ -11,7 +11,7 @@
 // import your own `settings` here or
 // import and modify the default settings through
 // @import 'settings/settings';
-@import 'base/settings';
+@import 'base/admin_settings';
 @import '../bower_components/foundation-sites/scss/foundation';
 
 // Sass utilities
@@ -62,6 +62,13 @@
 @include foundation-flex-classes;
 
 /*----------------------------------------------
+	Font Awesome
+----------------------------------------------*/
+
+$fa-font-path: "../fonts/";
+@import "vendors/font-awesome";
+
+/*----------------------------------------------
 	Fantastics
 ----------------------------------------------*/
 
@@ -69,6 +76,7 @@
 @import 'components/admin/carousel';
 @import 'components/admin/dropdown';
 @import 'components/admin/navigation';
+@import 'components/admin/menu';
 @import 'layout/admin/body';
 @import 'layout/admin/footer';
 @import 'layout/admin/forms';

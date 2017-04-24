@@ -1,14 +1,72 @@
+html {
+	height: 100%;
+}
+
+.fan-admin {
+	overflow: hidden;
+	height: 100%;
+}
+
+.admin-wrap {
+	min-height: 100%;
+	height: auto;
+	width: 100%;
+	position: relative;
+	background-color: $light-gray;
+}
 .admin-content-wrap {
-    margin-left: 200px;
-    height: 100%;
+    margin-left: 250px;
+    height: 100vh;
     padding-left: 20px;
     position: relative;
+	padding-top: 1rem;
 
-    .admin-body {
+    .admin-content-body {
         position: relative;
 
         .wrap {
             margin: 10px 20px 0 2px;
         }
     }
+}
+
+h1, h2, h3 , h4, h5, h6 {
+	color: $dark-gray;
+}
+
+.admin-panel {
+	background-color: $white;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	border: 1px solid #e5e5e5;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	margin-bottom: 2rem;
+	@include breakpoint( medium down ){
+		margin-bottom: 1rem;
+	}
+	
+	.panel__header {
+		border-bottom: 1px solid $light-gray;
+		padding: 0.3rem 1rem;
+		
+		font-weight: bold;
+		h6 {
+			margin-bottom: 0px;
+			font-weight: bold;
+		}
+	}
+	
+	.panel__body {
+		padding: 0.5rem 1rem;
+		
+		.columns {
+			margin-bottom: 1rem;
+			a {
+				display: block;
+				
+				i {
+					width: 30px;
+				}
+			}
+		}
+	}
 }

@@ -1,0 +1,25 @@
+.admin-menu-wrap {
+	background-color: $primary-background-color;
+	position: relative;
+	float: left;
+	z-index: 9990;
+	width: 250px;
+}
+
+.admin-menu-back {
+	position: fixed;
+	top: 0px;
+	bottom: -120px;
+	width: 250px;
+	background-color: $primary-background-color;
+	z-index: 1;
+}
+
+.admin-logo h1.admin-title-bar a {
+	color: $white;
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	padding-left: 0.5rem;
+	margin-top: 2rem;
+}

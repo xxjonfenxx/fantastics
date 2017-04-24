@@ -68,6 +68,12 @@ module.exports = function(grunt) {
 				}
 			},
 			
+			chart_min: {
+				files: {
+					'Scripts/chart.min.js' : ['bower_components/chart.js/dist/Chart.js']
+				}	
+			},
+			
 			app_min: {
 				files: {
 					'Scripts/app.min.js' : ['build/app.js']
@@ -78,8 +84,8 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'css/style.css' : 'scss/style.scss',
-					'css/admin.css' : 'scss/admin.scss',
+					'Css/style.css' : 'scss/style.scss',
+					'Css/admin.css' : 'scss/admin.scss',
 				}
 			}
 		}

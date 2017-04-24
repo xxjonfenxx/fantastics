@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+	<link href="@Url.Content("~/Css/admin.css")" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+	@RenderSection("Styles", false)
+</head>
+<body class="fan-admin">
+	<div class="admin-wrap">
+		<div class="admin-menu-main">
+			<div id="admin-menu-back" class="admin-menu-back"></div>
+			<div id="admin-menu-wrap" class="admin-menu-wrap">
+				<div class="admin-logo">
+					<h1 class="admin-title-bar">@Html.RouteLink("Fantastics", new { action = "Index", controller = "Admin", area = "Admin" })</h1>
+				</div>
+				<ul class="admin-menu dropdown">
+					<li>
+						<a href=""><i class="fa fa-shopping-bag" aria-hidden="true"></i> Products <span class="caret"><i class="fa fa-caret-right" aria-hidden="true"></i></span></a>
+						<ul class="sub-menu">
+							<li><a href="">All Products</a></li>
+							<li><a href="">New Products</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href=""><i class="fa fa-filter" aria-hidden="true"></i> Product Categories <span class="caret"><i class="fa fa-caret-right" aria-hidden="true"></i></span></a>
+						<ul class="sub-menu">
+							<li><a href="">All Categories</a></li>
+							<li><a href="">New Category</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href=""><i class="fa fa-building" aria-hidden="true"></i> Locations <span class="caret"><i class="fa fa-caret-right" aria-hidden="true"></i></span></a>
+						<ul class="sub-menu">
+							<li><a href="">All Locations</a></li>
+							<li><a href="">New Location</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href=""><i class="fa fa-group" aria-hidden="true"></i> Users <span class="caret"><i class="fa fa-caret-right" aria-hidden="true"></i></span></a>
+						<ul class="sub-menu">
+							<li><a href="">All Users</a></li>
+							<li><a href="">New User</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="admin-content-wrap">
+			<div class="admin-content-body">
+				@RenderBody()
+			</div>
+		</div>
+	</div>
+	<script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+	<script src="@Url.Content("~/Scripts/foundation.min.js")"></script>
+	<script src="@Url.Content("~/Scripts/datatables.min.js")"></script>
+	<script src="@Url.Content("~/Scripts/chart.min.js")"></script>
+	<script src="@Url.Content("~/Scripts/app.min.js")"></script>
+</body>
+</html>
